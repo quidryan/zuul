@@ -47,8 +47,6 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.function.ToDoubleFunction;
 
-import static org.apache.commons.collections.CollectionUtils.isNotEmpty;
-
 /**
  * User: michaels@netflix.com
  * Date: 3/4/16
@@ -88,7 +86,7 @@ public class BaseSslContextFactory implements SslContextFactory {
                     .sessionTimeout(serverSslConfig.getSessionTimeout())
                     .sslProvider(sslProvider);
 
-            if (serverSslConfig.getClientAuth() != null && isNotEmpty(trustedCerts)) {
+            if (serverSslConfig.getClientAuth() != null && trustedCerts != null && !trustedCerts.isEmpty()) {
                 builder = builder
                         .trustManager(trustedCerts.toArray(new X509Certificate[0]))
                         .clientAuth(serverSslConfig.getClientAuth());

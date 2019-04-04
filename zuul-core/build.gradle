@@ -12,7 +12,10 @@ dependencies {
     compile "org.json:json:20090211"
     compile 'org.bouncycastle:bcpg-jdk15on:1.+'
     compile 'org.bouncycastle:bcprov-jdk15on:1.+'
-
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.+' // Used by RequestAttempts.java
+    compile 'com.google.code.findbugs:annotations:3.0.1'
+    compile 'commons-configuration:commons-configuration:1.8' // ZuulFiltersModule
+    
     compile "com.netflix.archaius:archaius-core:0.7.5"
     compile "com.netflix.servo:servo-core:0.7.2"
     compile "com.netflix.spectator:spectator-api:0.59.0"
